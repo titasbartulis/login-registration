@@ -1,14 +1,20 @@
-import { useState } from 'react';
+import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Signup from './components/Signup';
+import Signup from "./components/Signup";
+import Login from "./components/Login";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-
   return (
     <div>
-      <Signup />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/register' element={<Signup />}></Route>
+          <Route path='/login' element={<Login />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
